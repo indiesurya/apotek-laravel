@@ -14,7 +14,7 @@ class ObatController extends Controller
             'page' => 'Data Obat',
             'data' => Obat::all()
         ]);
-    }      
+    }  
 } 
 
 

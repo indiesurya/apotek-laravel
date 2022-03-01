@@ -16,10 +16,9 @@ class Obat extends Migration
         Schema::create('obats', function (Blueprint $table) {
             $table->id();
             $table->string('nama')->unique();
-            $table->string('kode')->unique();
             $table->foreignId('kategori_id');
             $table->string('kegunaan');
-            $table->string('distributor');
+            $table->foreignId('distributor_id');
             $table->integer('stok');
             $table->integer('harga');
             $table->timestamps();

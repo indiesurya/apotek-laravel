@@ -12,5 +12,9 @@ class DashboardController extends Controller
             'title' => 'Apotek Kubu Anyar',
             'page' => 'Dashboard'
         ]);
-    }  
+    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 }

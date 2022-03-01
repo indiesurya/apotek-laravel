@@ -11,12 +11,10 @@
                 <thead>
                 <tr>
                     <th> # </th>
-                    <th> Nama Obat</th>
-                    <th> Kategori </th>
-                    <th> Kegunaan </th>
-                    <th> Distributor </th>
-                    <th> Stok </th>
-                    <th> Harga </th>
+                    <th> Nama</th>
+                    <th> Alamat </th>
+                    <th> No. Telepon </th>
+                    <th> Nama Kurir </th>
                 </tr>
                 </thead>
                 <tbody>
@@ -27,11 +25,9 @@
                 <tr>
                     <td>{{ $no }}</td>
                     <td>{{ $item->nama }}</td>
-                    <td>{{ $item->kategori->nama }} </td>
-                    <td>{{ $item->kegunaan }}</td>
-                    <td>{{ $item->distributor->nama }}</td>
-                    <td>{{ $item->stok }}</td>
-                    <td>{{ $item->harga }}</td>
+                    <td>{{ $item->alamat }} </td>
+                    <td>{{ $item->telepon }}</td>
+                    <td>{{ $item->kurir }}</td>
                 </tr>
                 @php
                     $no++;

@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Kategori;
 use App\Models\Pemasukan;
 use App\Models\Pengeluaran;
+use App\Models\Distributor;
 
 class DatabaseSeeder extends Seeder
 {
@@ -21,37 +22,33 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
         Obat::create([
             'nama' => 'Kalpanax',
-            'kode' => '678',
             'kategori_id' => 1,
             'kegunaan' => 'pilek',
-            'distributor' => 'PT.amalia',
+            'distributor_id' => 2,
             'stok' => 40,
             'harga' => 7000
         ]);
         Obat::create([
             'nama' => 'Panadol',
-            'kode' => '6782',
             'kategori_id' => 1,
             'kegunaan' => 'pilek',
-            'distributor' => 'PT.amalia',
+            'distributor_id' => 1,
             'stok' => 40,
             'harga' => 2000
         ]);
         Obat::create([
             'nama' => 'Paracetamol',
-            'kode' => '6718',
             'kategori_id' => 2,
             'kegunaan' => 'batuk',
-            'distributor' => 'PT.sentosa',
+            'distributor_id' => 1,
             'stok' => 50,
             'harga' => 8000
         ]);
         Obat::create([
             'nama' => 'Duckbil',
-            'kode' => '68',
             'kategori_id' => 3,
             'kegunaan' => 'batuk',
-            'distributor' => 'PT.yontosa',
+            'distributor_id' => 1,
             'stok' => 50,
             'harga' => 6000
         ]);
@@ -85,6 +82,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('12345')
         ]);
         Pemasukan::create([
+            'obat_id'=>4,
             'nama'=>'duckbil',
             'jumlah'=> 4,
             'harga'=> 6000,
@@ -92,6 +90,7 @@ class DatabaseSeeder extends Seeder
             'user_id'=>1
         ]);
         Pemasukan::create([
+            'obat_id'=>1,
             'nama' => 'kalpanax',
             'jumlah' => 4,
             'harga' => 7000,
@@ -99,6 +98,7 @@ class DatabaseSeeder extends Seeder
             'user_id' => 1
         ]);
         Pemasukan::create([
+            'obat_id'=>1,
             'nama' => 'kalpanax',
             'jumlah' => 2,
             'harga' => 7000,
@@ -122,6 +122,24 @@ class DatabaseSeeder extends Seeder
             'total' => 6000,
             'user_id' => 1,
             'bukti' => '1.jpg'
+        ]);
+        Distributor::create([
+            'nama' => 'PT.JAWA',
+            'alamat' => 'jalan jawa',
+            'telepon' => '08976432884',
+            'kurir' => 'jawajawaaa'
+        ]);
+        Distributor::create([
+            'nama' => 'PT.BALI',
+            'alamat' => 'jalan jawa',
+            'telepon' => '08976432884',
+            'kurir' => 'jawajawaaa'
+        ]);
+        Distributor::create([
+            'nama' => 'PT.LOMBOK',
+            'alamat' => 'jalan jawa',
+            'telepon' => '08976432884',
+            'kurir' => 'jawajawaaa'
         ]);
     }
 }
